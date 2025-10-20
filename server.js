@@ -1,16 +1,14 @@
-import express, { urlencoded, json } from 'express';
-import dotenv from 'dotenv';
-
-import connectDB from './MongoDb/connectDB.js';
-import stringRouters from './Routers/stringRouters.js';
+import express, { urlencoded, json } from "express";
+import dotenv from "dotenv";
+import connectDB from "./MongoDb/connectdb.js"; // ✅ Correct case
+import stringRouters from "./Routers/stringRouters.js";
 import cors from "cors";
-
 
 dotenv.config();
 const appServer = express();
 const PORT = process.env.PORT || 6000;
 
-// // ✅ 🔗 Connect to DB
+// ✅ Connect to MongoDB
 connectDB();
 
 appServer.use(urlencoded({ extended: true }));
@@ -33,3 +31,4 @@ appServer.use((err, req, res, next) => {
 appServer.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
+
