@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./MongoDb/connectdb.js";
+import connectDB from "./MongoDb/connectDB.js";
 import stringRouters from "./Routers/stringRouters.js";
 import cors from "cors";
 
